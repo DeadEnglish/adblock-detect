@@ -2,8 +2,10 @@ import { useEffect, useState } from "react";
 
 export const useDetectAdBlock = () => {
 	const [adBlockDetected, setAdBlockDetected] = useState(false);
+	const url = window.location.href;
+
 	useEffect(() => {
-		fetch("https://adblock-detect.vercel.app/adhelper.js", {
+		fetch(`${url}adhelper.js`, {
 			method: "HEAD",
 			mode: "no-cors",
 			cache: "no-store",
