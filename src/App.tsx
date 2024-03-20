@@ -1,7 +1,8 @@
 import "./App.css";
+import { useDetectAdBlock } from "./hooks/useDetectAdblock";
 
 function App() {
-	const adblockStatus = document.getElementById("muBPdeUDjZwG") ? "disabled" : "enabled";
+	const adblockStatus = useDetectAdBlock() ? "enabled" : "disabled";
 
 	return (
 		<>
